@@ -34,22 +34,15 @@ def criar_mensagem_commit(funcao_nome):
     return mensagem
 
 
-def verificar_tag_valida(tag):
-    """
-    Verifica se uma tag está no formato 'vX.Y' (ex: v1.0, v2.1).
-    Retorna True se o formato for válido, caso contrário False.
-    """
-    pass
+def verificar_tag_valida(tag):    
+    if len(tag) == 4 and tag[0] == "v" and tag[2] == "." and tag[1].isdigit() and tag[3].isdigit():
+        return True
+    elif len(tag) == 5 and tag[0] == "v" and tag[2] == "." and tag[1].isdigit() and tag[3:].isdigit():
+        return True
+    else:
+        return False
 
 
 def gerar_relatorio_final(funcoes_concluidas):
-    """
-    Recebe uma lista com os nomes das funções implementadas
-    e retorna uma mensagem final do desafio.
-
-    Exemplo:
-    gerar_relatorio_final(["mostrar_mensagem_inicial", "listar_comandos_git_basicos"])
-    ->
-    "Desafio concluído! 2 funções implementadas com sucesso."
-    """
-    pass
+    total = len(funcoes_concluidas)
+    return f"Desafio concluído! {total} função{'s' if total != 1 else ''} implementada{'s' if total != 1 else ''} com sucesso."
