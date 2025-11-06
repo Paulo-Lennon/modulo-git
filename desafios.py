@@ -34,12 +34,13 @@ def criar_mensagem_commit(funcao_nome):
     return mensagem
 
 
-def verificar_tag_valida(tag):
-    """
-    Verifica se uma tag está no formato 'vX.Y' (ex: v1.0, v2.1).
-    Retorna True se o formato for válido, caso contrário False.
-    """
-    pass
+def verificar_tag_valida(tag):    
+    if len(tag) == 4 and tag[0] == "v" and tag[2] == "." and tag[1].isdigit() and tag[3].isdigit():
+        return True
+    elif len(tag) == 5 and tag[0] == "v" and tag[2] == "." and tag[1].isdigit() and tag[3:].isdigit():
+        return True
+    else:
+        return False
 
 
 def gerar_relatorio_final(funcoes_concluidas):
