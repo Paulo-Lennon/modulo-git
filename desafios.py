@@ -20,12 +20,11 @@ def mostrar_mensagem_inicial():
     return mensagem
 
 def listar_comandos_git_basicos():
-    """
-    Retorna uma lista com os principais comandos básicos do Git.
-    Exemplo de saída:
-    ["git init", "git add", "git commit", "git status", "git push"]
-    """
-    pass
+   
+    lista=["git init", "git add", "git commit", "git status", "git push"]
+    print(lista)
+    return(lista)
+
 
 
 def criar_mensagem_commit(funcao_nome):
